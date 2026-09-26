@@ -1,0 +1,2878 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+    --navy:#172554;
+
+    --blue:#4f46c7;
+
+    --purple:#7c5ce6;
+
+    --pink:#e99ad7;
+
+    --lavender:#eee8ff;
+
+    --cream:#fffdf9;
+
+    --text:#24304d;
+
+    --muted:#68718a;
+
+    --border:#e7e0f5;
+
+    --shadow:
+        0 18px 45px
+        rgba(64,48,120,.10);
+
+}
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'DM Sans',sans-serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+button{
+
+    font-family:inherit;
+
+}
+
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.site-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:
+        rgba(255,253,249,.88);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(231,224,245,.7);
+
+}
+
+
+.navbar{
+
+    max-width:1240px;
+
+    margin:auto;
+
+    min-height:78px;
+
+    padding:
+        0
+        28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:24px;
+
+    color:var(--navy);
+
+}
+
+
+.brand-mark{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:13px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8c8ff,
+            #a9ddf5
+        );
+
+    color:var(--blue);
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+    font-size:15px;
+
+    font-weight:800;
+
+}
+
+
+.nav-links{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+.nav-links a{
+
+    position:relative;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#48516a;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-9px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover,
+.nav-links a.active{
+
+    color:var(--blue);
+
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+
+.menu-btn{
+
+    display:none;
+
+    border:0;
+
+    background:var(--lavender);
+
+    color:var(--blue);
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.section{
+
+    padding:
+        105px
+        7%;
+
+    max-width:1240px;
+
+    margin:auto;
+
+}
+
+
+.section-heading h2{
+
+    margin-top:8px;
+
+    font-size:42px;
+
+    line-height:1.15;
+
+    color:var(--navy);
+
+}
+
+
+.section-heading h2 span{
+
+    color:var(--purple);
+
+}
+
+
+.section-heading p{
+
+    margin-top:13px;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+.hand-title{
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:23px;
+
+    color:#755fc7;
+
+}
+
+
+.centered{
+
+    text-align:center;
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:
+        120px
+        7%
+        65px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1.05fr;
+
+    align-items:center;
+
+    gap:35px;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(213,199,255,.38),
+            transparent 17%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(185,226,246,.35),
+            transparent 19%
+        ),
+
+        var(--cream);
+
+}
+
+
+.hero::before,
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+}
+
+
+.hero::before{
+
+    width:170px;
+
+    height:170px;
+
+    left:-90px;
+
+    bottom:70px;
+
+    background:#e9dfff;
+
+}
+
+
+.hero::after{
+
+    width:190px;
+
+    height:190px;
+
+    right:-100px;
+
+    bottom:-50px;
+
+    background:#d8f0fa;
+
+}
+
+
+.hero-decor{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    z-index:0;
+
+}
+
+
+.decor-one{
+
+    width:90px;
+
+    height:90px;
+
+    top:100px;
+
+    left:45%;
+
+    background:#f5d9ef;
+
+    opacity:.6;
+
+}
+
+
+.decor-two{
+
+    width:65px;
+
+    height:65px;
+
+    bottom:120px;
+
+    right:43%;
+
+    background:#cfeafb;
+
+}
+
+
+.tiny-star{
+
+    position:absolute;
+
+    color:#6e59c7;
+
+    font-size:25px;
+
+    z-index:1;
+
+}
+
+
+.star-one{
+
+    top:160px;
+
+    right:8%;
+
+}
+
+
+.star-two{
+
+    bottom:120px;
+
+    left:4%;
+
+}
+
+
+.hero-text,
+.hero-art{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.hello{
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:28px;
+
+    color:var(--navy);
+
+    margin-bottom:3px;
+
+}
+
+
+.hello span{
+
+    color:#d789cb;
+
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(
+            62px,
+            7vw,
+            100px
+        );
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    color:var(--navy);
+
+    font-weight:800;
+
+}
+
+
+.hero h1 span{
+
+    color:transparent;
+
+    -webkit-text-stroke:
+        2px
+        var(--purple);
+
+    text-shadow:
+        5px 5px 0
+        rgba(226,207,255,.8);
+
+}
+
+
+.role-line{
+
+    display:inline-flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-top:25px;
+
+    padding:
+        9px
+        17px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #eee4ff,
+            #ffeaf7
+        );
+
+    color:#5143a8;
+
+    font-weight:700;
+
+    font-size:14px;
+
+}
+
+
+.role-line b{
+
+    color:#c18bc1;
+
+}
+
+
+.hero-description{
+
+    max-width:570px;
+
+    margin-top:22px;
+
+    color:#626b83;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:13px;
+
+    margin-top:28px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        13px
+        21px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+.btn-primary{
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            #a16de6
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(116,84,205,.22);
+
+}
+
+
+.btn-light{
+
+    background:white;
+
+    color:var(--navy);
+
+    border:
+        1px solid
+        #d8d0eb;
+
+}
+
+
+.btn-light:hover{
+
+    border-color:var(--purple);
+
+    color:var(--purple);
+
+}
+
+
+
+/* =====================================================
+   MINI SKILLS
+===================================================== */
+
+.mini-skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:28px;
+
+    max-width:600px;
+
+}
+
+
+.mini-skills span{
+
+    padding:
+        7px
+        11px;
+
+    border-radius:30px;
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    color:#65708b;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+
+/* =====================================================
+   HERO ART
+===================================================== */
+
+.hero-art{
+
+    min-height:530px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.laptop-scene{
+
+    width:min(100%,620px);
+
+    height:420px;
+
+    position:relative;
+
+    margin-top:35px;
+
+}
+
+
+.laptop{
+
+    position:absolute;
+
+    width:440px;
+
+    right:40px;
+
+    top:65px;
+
+    transform:rotate(-2deg);
+
+    z-index:4;
+
+}
+
+
+.laptop-screen{
+
+    height:270px;
+
+    border:
+        8px solid
+        #8c7bca;
+
+    border-bottom-width:12px;
+
+    border-radius:
+        18px
+        18px
+        8px
+        8px;
+
+    background:#17213f;
+
+    box-shadow:
+        0 22px 40px
+        rgba(74,63,130,.18);
+
+    padding:
+        18px
+        19px;
+
+}
+
+
+.window-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-bottom:18px;
+
+}
+
+
+.window-dots i{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#d7c7f4;
+
+}
+
+
+.code{
+
+    color:#dbe7ff;
+
+    font-family:monospace;
+
+    font-size:13px;
+
+    line-height:1.75;
+
+}
+
+
+.code span{
+
+    color:#d996e7;
+
+}
+
+
+.code em{
+
+    color:#9fdbef;
+
+    font-style:normal;
+
+}
+
+
+.code strong{
+
+    color:#bce7bd;
+
+}
+
+
+.code-footer{
+
+    margin-top:15px;
+
+    color:#e5b7df;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:18px;
+
+}
+
+
+.keyboard{
+
+    height:25px;
+
+    width:500px;
+
+    margin-left:-30px;
+
+    background:
+        linear-gradient(
+            #9e91d4,
+            #7d71b5
+        );
+
+    clip-path:
+        polygon(
+            6% 0,
+            94% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius:
+        0
+        0
+        15px
+        15px;
+
+}
+
+
+.book-stack{
+
+    position:absolute;
+
+    left:10px;
+
+    bottom:38px;
+
+    z-index:5;
+
+    transform:rotate(-4deg);
+
+}
+
+
+.book{
+
+    width:190px;
+
+    height:37px;
+
+    padding:
+        8px
+        15px;
+
+    border-radius:6px;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 5px 8px
+        rgba(50,50,100,.12);
+
+}
+
+
+.book-html{
+
+    background:#a98fe0;
+
+}
+
+
+.book-css{
+
+    background:#84c5df;
+
+}
+
+
+.book-js{
+
+    background:#e6a6cf;
+
+}
+
+
+
+/* PLANT */
+
+.plant{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:85px;
+
+    z-index:6;
+
+}
+
+
+.pot{
+
+    width:70px;
+
+    height:62px;
+
+    border-radius:
+        8px
+        8px
+        22px
+        22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8c5dd,
+            #bfa4e7
+        );
+
+}
+
+
+.leaf{
+
+    position:absolute;
+
+    width:42px;
+
+    height:70px;
+
+    background:#78a99d;
+
+    border-radius:
+        100%
+        0
+        100%
+        0;
+
+    transform-origin:bottom;
+
+}
+
+
+.leaf-1{
+
+    bottom:52px;
+
+    left:4px;
+
+    transform:rotate(-25deg);
+
+}
+
+
+.leaf-2{
+
+    bottom:58px;
+
+    left:24px;
+
+    transform:rotate(12deg);
+
+    background:#659b91;
+
+}
+
+
+.leaf-3{
+
+    bottom:48px;
+
+    left:42px;
+
+    transform:rotate(35deg);
+
+    background:#8ab8ac;
+
+}
+
+
+
+/* MUG */
+
+.mug{
+
+    position:absolute;
+
+    right:-35px;
+
+    bottom:20px;
+
+    width:92px;
+
+    height:85px;
+
+    border-radius:
+        10px
+        10px
+        28px
+        28px;
+
+    background:#fff;
+
+    border:
+        5px solid
+        #ded3ef;
+
+    box-shadow:
+        0 10px 20px
+        rgba(90,70,120,.12);
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    color:#6b5a9e;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:14px;
+
+    z-index:7;
+
+}
+
+
+.mug::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:35px;
+
+    right:-27px;
+
+    top:20px;
+
+    border:
+        6px solid
+        #ded3ef;
+
+    border-left:0;
+
+    border-radius:
+        0
+        20px
+        20px
+        0;
+
+}
+
+
+
+/* FLOATING TECH */
+
+.floating-tech{
+
+    position:absolute;
+
+    z-index:8;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:17px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-weight:800;
+
+    font-size:17px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(70,50,120,.12);
+
+}
+
+
+.tech-c{
+
+    top:35px;
+
+    left:75px;
+
+    background:#d9eaff;
+
+    color:#4661b4;
+
+}
+
+
+.tech-js{
+
+    top:10px;
+
+    right:135px;
+
+    background:#f6e3ad;
+
+    color:#8a6a17;
+
+}
+
+
+.tech-go{
+
+    top:70px;
+
+    right:20px;
+
+    background:#d8f2f6;
+
+    color:#16879b;
+
+}
+
+
+.tech-db{
+
+    bottom:60px;
+
+    right:80px;
+
+    background:#eadcff;
+
+    color:#6d4bb3;
+
+}
+
+
+
+/* FLOATING NOTE */
+
+.floating-note{
+
+    position:absolute;
+
+    z-index:9;
+
+    top:20px;
+
+    right:18%;
+
+    padding:
+        13px
+        17px;
+
+    background:#fff0b9;
+
+    color:#564b72;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:18px;
+
+    line-height:1.05;
+
+    transform:rotate(5deg);
+
+    box-shadow:
+        0 8px 15px
+        rgba(80,70,100,.08);
+
+}
+
+
+.creative-note{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:8%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:22px;
+
+    color:#6856a5;
+
+    transform:rotate(-5deg);
+
+}
+
+
+
+/* SCROLL */
+
+.scroll-cue{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:4px;
+
+    color:#6f7890;
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.scroll-cue i:first-child{
+
+    font-size:20px;
+
+    color:var(--purple);
+
+}
+
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf9,
+            #f9f6ff
+        );
+
+}
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.25fr
+        .85fr;
+
+    gap:25px;
+
+    margin-top:45px;
+
+}
+
+
+.about-card,
+.info-box{
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:var(--shadow);
+
+    border-radius:24px;
+
+}
+
+
+.main-about{
+
+    padding:38px;
+
+}
+
+
+.card-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:16px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:var(--lavender);
+
+    color:var(--purple);
+
+    font-size:22px;
+
+}
+
+
+.main-about h3{
+
+    margin:
+        22px
+        0
+        12px;
+
+    color:var(--navy);
+
+    font-size:25px;
+
+}
+
+
+.main-about p{
+
+    color:var(--muted);
+
+    line-height:1.85;
+
+    margin-bottom:12px;
+
+}
+
+
+.about-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.info-box{
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.info-icon{
+
+    flex:none;
+
+    width:47px;
+
+    height:47px;
+
+    border-radius:14px;
+
+    background:#f3edff;
+
+    color:#765bc3;
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+
+.info-box small{
+
+    display:block;
+
+    color:#9299ab;
+
+    margin-bottom:4px;
+
+}
+
+
+.info-box strong{
+
+    color:var(--navy);
+
+    font-size:14px;
+
+}
+
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        40px
+        55px;
+
+    margin-top:48px;
+
+    align-items:start;
+
+}
+
+
+.skill-card{
+
+    padding:
+        10px
+        12px;
+
+    text-align:center;
+
+    background:transparent;
+
+    border:0;
+
+    box-shadow:none;
+
+    transition:.3s ease;
+
+}
+
+
+.skill-card:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+.skill-card i,
+.text-logo{
+
+    width:76px;
+
+    height:76px;
+
+    margin:
+        0
+        auto
+        13px;
+
+    display:grid;
+
+    place-items:center;
+
+    color:var(--purple);
+
+    background:transparent;
+
+    transition:.3s ease;
+
+}
+
+
+.skill-card i{
+
+    font-size:42px;
+
+}
+
+
+.text-logo{
+
+    font-size:35px;
+
+    font-weight:800;
+
+    font-family:
+        'DM Sans',
+        sans-serif;
+
+}
+
+
+.go-logo{
+
+    color:#00a9c7;
+
+}
+
+
+.skill-card:hover i,
+.skill-card:hover .text-logo{
+
+    color:#a15bd8;
+
+    transform:scale(1.12);
+
+}
+
+
+.skill-card h3{
+
+    font-size:17px;
+
+    color:var(--navy);
+
+    font-weight:700;
+
+}
+
+
+.skill-card p{
+
+    margin-top:5px;
+
+    color:#8a91a3;
+
+    font-size:12px;
+
+}
+
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.projects{
+
+    background:#f8f5ff;
+
+    max-width:none;
+
+    padding-left:
+        calc((100% - 1240px)/2);
+
+    padding-right:
+        calc((100% - 1240px)/2);
+
+}
+
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:22px;
+
+    margin-top:45px;
+
+}
+
+
+.project-card{
+
+    position:relative;
+
+    padding:34px;
+
+    border-radius:25px;
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+.project-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+.project-card.featured{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #f0ebff
+        );
+
+}
+
+
+.project-number{
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-family:
+        'Patrick Hand',
+        cursive;
+
+    font-size:25px;
+
+    color:#c8bce7;
+
+}
+
+
+.project-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    background:#eee7ff;
+
+    color:var(--purple);
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:23px;
+
+}
+
+
+.project-card h3{
+
+    color:var(--navy);
+
+    margin:
+        20px
+        0
+        10px;
+
+    font-size:23px;
+
+}
+
+
+.project-card p{
+
+    color:var(--muted);
+
+    line-height:1.75;
+
+}
+
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:
+        20px
+        0;
+
+}
+
+
+.tags span{
+
+    padding:
+        6px
+        10px;
+
+    border-radius:20px;
+
+    background:#f6f2ff;
+
+    color:#6654a7;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+
+.project-links{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+.project-links a{
+
+    color:#5a4ca4;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.project-links a:hover{
+
+    color:#c05ba9;
+
+}
+
+
+
+/* =====================================================
+   EDUCATION
+===================================================== */
+
+.education{
+
+    background:white;
+
+}
+
+
+.timeline{
+
+    max-width:850px;
+
+    margin:
+        50px
+        auto
+        0;
+
+    position:relative;
+
+}
+
+
+.timeline-line{
+
+    position:absolute;
+
+    left:20px;
+
+    top:5px;
+
+    bottom:5px;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            var(--purple),
+            #d6c7f7
+        );
+
+}
+
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:65px;
+
+    margin-bottom:25px;
+
+}
+
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:11px;
+
+    top:20px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:
+        5px solid
+        var(--purple);
+
+    z-index:2;
+
+}
+
+
+.timeline-card{
+
+    padding:
+        23px
+        25px;
+
+    border-radius:20px;
+
+    background:#fbf9ff;
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+
+.year{
+
+    color:#765bc3;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+.timeline-card h3{
+
+    margin:
+        7px
+        0;
+
+    color:var(--navy);
+
+    font-size:18px;
+
+}
+
+
+.timeline-card p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+
+    background:#f9f6ff;
+
+    max-width:none;
+
+    padding-left:7%;
+
+    padding-right:7%;
+
+}
+
+
+.contact-box{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:55px;
+
+    border-radius:30px;
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:35px;
+
+    text-align:left;
+
+}
+
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:17px;
+
+    border-radius:17px;
+
+    background:#faf8ff;
+
+    border:
+        1px solid
+        #eee8f8;
+
+    transition:.3s;
+
+}
+
+
+.contact-item:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#d6c8f1;
+
+}
+
+
+.contact-item > span{
+
+    width:43px;
+
+    height:43px;
+
+    border-radius:13px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:#eee7ff;
+
+    color:var(--purple);
+
+}
+
+
+.contact-item small{
+
+    display:block;
+
+    color:#949bad;
+
+}
+
+
+.contact-item strong{
+
+    color:var(--navy);
+
+    font-size:13px;
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:25px;
+
+    text-align:center;
+
+    color:#7c8295;
+
+    background:white;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    font-size:13px;
+
+}
+
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:48px;
+
+    height:48px;
+
+    border:0;
+
+    border-radius:15px;
+
+    background:var(--purple);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:grid;
+
+    place-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+    z-index:900;
+
+    box-shadow:
+        0 10px 25px
+        rgba(95,70,170,.25);
+
+}
+
+
+#topBtn.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1050px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding-top:130px;
+
+    }
+
+
+    .hero-text{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .hero-description{
+
+        max-width:650px;
+
+    }
+
+
+    .hero-art{
+
+        min-height:480px;
+
+    }
+
+
+    .mini-skills{
+
+        justify-content:center;
+
+    }
+
+
+    .skills-grid{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+        gap:
+            35px
+            25px;
+
+    }
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .projects{
+
+        padding-left:7%;
+
+        padding-right:7%;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:760px){
+
+
+    /* NAVBAR */
+
+    .navbar{
+
+        min-height:70px;
+
+        padding:
+            0
+            18px;
+
+    }
+
+
+    .menu-btn{
+
+        display:grid;
+
+        place-items:center;
+
+    }
+
+
+    .nav-links{
+
+        position:absolute;
+
+        top:70px;
+
+        left:18px;
+
+        right:18px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:18px;
+
+        padding:25px;
+
+        background:
+            rgba(255,255,255,.97);
+
+        border:
+            1px solid
+            var(--border);
+
+        border-radius:20px;
+
+        box-shadow:var(--shadow);
+
+    }
+
+
+    .nav-links.open{
+
+        display:flex;
+
+    }
+
+
+
+    /* HERO */
+
+    .hero{
+
+        padding-left:5%;
+
+        padding-right:5%;
+
+        padding-bottom:50px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:60px;
+
+        letter-spacing:-3px;
+
+    }
+
+
+    .role-line{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+        max-width:280px;
+
+    }
+
+
+    .hero-art{
+
+        transform:scale(.78);
+
+        transform-origin:
+            top center;
+
+        min-height:410px;
+
+        margin-bottom:-70px;
+
+    }
+
+
+    .laptop-scene{
+
+        transform:scale(.9);
+
+    }
+
+
+    .floating-note{
+
+        right:8%;
+
+    }
+
+
+
+    /* SECTIONS */
+
+    .section{
+
+        padding:
+            75px
+            6%;
+
+    }
+
+
+    .section-heading h2{
+
+        font-size:34px;
+
+    }
+
+
+
+    /* =================================================
+       COMPACT MOBILE SKILLS
+    ================================================= */
+
+    .skills-grid{
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:
+            28px
+            8px;
+
+        margin-top:35px;
+
+    }
+
+
+    .skill-card{
+
+        padding:
+            3px
+            1px;
+
+    }
+
+
+    .skill-card i,
+    .text-logo{
+
+        width:52px;
+
+        height:52px;
+
+        margin:
+            0
+            auto
+            6px;
+
+    }
+
+
+    .skill-card i{
+
+        font-size:31px;
+
+    }
+
+
+    .text-logo{
+
+        font-size:26px;
+
+    }
+
+
+    .skill-card h3{
+
+        font-size:12px;
+
+        line-height:1.15;
+
+    }
+
+
+    .skill-card p{
+
+        display:none;
+
+    }
+
+
+
+    /* PROJECTS */
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .projects{
+
+        padding-left:6%;
+
+        padding-right:6%;
+
+    }
+
+
+
+    /* CONTACT */
+
+    .contact{
+
+        padding-left:5%;
+
+        padding-right:5%;
+
+    }
+
+
+    .contact-box{
+
+        padding:
+            35px
+            20px;
+
+    }
+
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    /* EDUCATION */
+
+    .timeline-item{
+
+        padding-left:50px;
+
+    }
+
+
+    .timeline-line{
+
+        left:14px;
+
+    }
+
+
+    .timeline-dot{
+
+        left:5px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:520px){
+
+
+    .brand{
+
+        font-size:21px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:50px;
+
+    }
+
+
+    .hello{
+
+        font-size:24px;
+
+    }
+
+
+    .hero-description{
+
+        font-size:15px;
+
+    }
+
+
+    .hero-art{
+
+        transform:scale(.63);
+
+        min-height:330px;
+
+        margin-bottom:-100px;
+
+    }
+
+
+    .mini-skills span{
+
+        font-size:11px;
+
+    }
+
+
+
+    /* EVEN MORE COMPACT SKILLS */
+
+    .skills-grid{
+
+        grid-template-columns:
+            repeat(4,1fr);
+
+        gap:
+            22px
+            3px;
+
+        margin-top:28px;
+
+    }
+
+
+    .skill-card i,
+    .text-logo{
+
+        width:45px;
+
+        height:45px;
+
+        margin-bottom:5px;
+
+    }
+
+
+    .skill-card i{
+
+        font-size:28px;
+
+    }
+
+
+    .text-logo{
+
+        font-size:23px;
+
+    }
+
+
+    .skill-card h3{
+
+        font-size:10px;
+
+        white-space:nowrap;
+
+    }
+
+
+    .skill-card p{
+
+        display:none;
+
+    }
+
+
+
+    .main-about{
+
+        padding:28px;
+
+    }
+
+
+    .project-card{
+
+        padding:26px;
+
+    }
+
+
+    .contact-item{
+
+        overflow:hidden;
+
+    }
+
+
+    .contact-item strong{
+
+        word-break:break-word;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:360px){
+
+
+    .navbar{
+
+        padding:
+            0
+            14px;
+
+    }
+
+
+    .hero{
+
+        padding-left:4%;
+
+        padding-right:4%;
+
+    }
+
+
+    .hero h1{
+
+        font-size:44px;
+
+    }
+
+
+    .role-line{
+
+        font-size:11px;
+
+        padding:
+            8px
+            11px;
+
+    }
+
+
+    .hero-description{
+
+        font-size:14px;
+
+    }
+
+
+    .section{
+
+        padding:
+            65px
+            5%;
+
+    }
+
+
+    .section-heading h2{
+
+        font-size:30px;
+
+    }
+
+
+    .skills-grid{
+
+        gap:
+            18px
+            2px;
+
+    }
+
+
+    .skill-card i,
+    .text-logo{
+
+        width:41px;
+
+        height:41px;
+
+    }
+
+
+    .skill-card i{
+
+        font-size:25px;
+
+    }
+
+
+    .text-logo{
+
+        font-size:20px;
+
+    }
+
+
+    .skill-card h3{
+
+        font-size:9px;
+
+    }
+
+}
